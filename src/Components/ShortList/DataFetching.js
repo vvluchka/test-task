@@ -33,22 +33,11 @@ function DataFetching(){
             console.log(err);
         })
     }
-
-
-    const hidePost = (index) => {
-        const newPosts = [...posts];
-        newPosts.splice(index, 1);
-        setPosts(newPosts);
-    }
     
-
-
-    
-
     return(
         <div>
             <ul>
-               {posts.map(post => <li onClick={hidePost}className="list-item">{post}</li>)}
+               {posts.map(post => <li className="list-item">{post.substring(0, post.indexOf('.'))}</li>)}
             </ul>
             <button onClick={addMore}className="button">Load more</button>     
         </div>
